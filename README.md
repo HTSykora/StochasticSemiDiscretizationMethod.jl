@@ -1,7 +1,8 @@
 # SemiDiscretizationMethod.jl
 
-Julia package to investigate the behaviour of the first and second moments of stochastic linear delay differential equations based on the paper  
-[Semi-Discretization for Time-Delay Systems (by Insperger and Stepan)](http://link.springer.com/10.1007/978-1-4614-0335-7).
+Julia package to investigate the behaviour of the first and second moments of stochastic linear delay differential equations based on the paper 
+[1] [Stochastic semi‐discretization for linear stochastic delay differential equations](https://onlinelibrary.wiley.com/doi/abs/10.1002/nme.6076) and the book
+[2] [Semi-Discretization for Time-Delay Systems (by Insperger and Stepan)](http://link.springer.com/10.1007/978-1-4614-0335-7).
 
 This package provides a tool to approximate the stability properties and stationary behaviour of linear periodic delay systems of the form:
 
@@ -129,8 +130,19 @@ With the use of the discrete mappings, the moment stability of the original syst
 Furthermore, the stationary first and second moments can be determined as the fix points of corresponding moment mappings.
 # Citing
 
-If you use this package as part of your research, teaching, or other activities, we would be grateful if you could cite the book it is based on (BibTeX entry):
+If you use this package as part of your research, teaching, or other activities, we would be grateful if you could cite the paper [1] and the book it is based on (BibTeX entries):
 ```
+@article{Sykora2019,
+author = {Sykora, Henrik T and Bachrathy, Daniel and Stepan, Gabor},
+doi = {10.1002/nme.6076},
+journal = {International Journal for Numerical Methods in Engineering},
+keywords = { stability, stochastic problems, time delay,differential equations},
+number = {ja},
+title = {{Stochastic semi-discretization for linear stochastic delay differential equations}},
+url = {https://onlinelibrary.wiley.com/doi/abs/10.1002/nme.6076},
+volume = {0}
+}
+
 @book{Insperger2011,
 address = {New York, NY},
 author = {Insperger, Tam{\'{a}}s and St{\'{e}}p{\'{a}}n, G{\'{a}}bor},
