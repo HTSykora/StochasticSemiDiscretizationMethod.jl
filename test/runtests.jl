@@ -1,4 +1,4 @@
-using StochasticsSemiDiscretizationMethod
+using StochasticSemiDiscretizationMethod
 using Test
 
 function createHayesProblem(a,β)
