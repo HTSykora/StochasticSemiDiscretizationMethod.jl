@@ -1,4 +1,4 @@
-# SemiDiscretizationMethod.jl
+# StochasticSemiDiscretizationMethod.jl
 
 Julia package to investigate the behaviour of the first and second moments of stochastic linear delay differential equations based on the paper 
 [1] [Stochastic semi‐discretization for linear stochastic delay differential equations](https://onlinelibrary.wiley.com/doi/abs/10.1002/nme.6076) and the book
@@ -159,9 +159,8 @@ year = {2011}
 
 # Usage with examples
 ## Installation
-(until it is registered in the Julia ecosystem)
 ```julia
-julia> ] add https://github.com/HTSykora/StochasticSemiDiscretizationMethod.jl
+julia> ] add StochasticSemiDiscretizationMethod
 ```
 
 ## Stochastic Hayes equations
