@@ -295,7 +295,7 @@ statM2=VecToCovMx(fixPointOfMapping(mapping), length(mapping.M1_Vs[1])); # stati
 ```julia
 method=SemiDiscretization(5,2π/30);
 τmax=2π+100eps()
-idxs=[1,2,3:2:StochasticSemiDiscretizationMethod.rOfDelay(τmax,method)*2...]
+idxs=[1,2,3:2:(StochasticSemiDiscretizationMethod.rOfDelay(τmax,method)+1)*2...]
 
 # ζ=0.05, α=0.3*A, β=0.3*B
 foo(A,B) = log(spectralRadiusOfMapping(DiscreteMapping_M2(createSLDOProblem(A,B,0.05,0.3*A,0.3*B,0.),method,τmax,idxs,
