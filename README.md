@@ -13,13 +13,16 @@ $$\mathrm{d} \mathbf{x}(t) = \left(\mathbf{A}(t) \mathbf{x}(t) + \sum_{j=1}^g \m
         \sum_{k=1}^w\left(\boldsymbol{\alpha}^k(t) +  \sum_{j=1}^g \boldsymbol{\beta}^k_j(t) \mathbf{x}(t-\tau_j(t)) + \boldsymbol{\sigma}^k(t) \right)\mathrm{d}W^k(t)$$
 
 by transforming the underlying differential equation into the stochastic mapping:
+
 $$\mathbf{y}_{n+1} = \left(\mathbf{F}_n+\sum_{k=1}^w\mathbf{G}^k_n\right)\mathbf{y}_n + \left(\mathbf{f}_n + \sum_{k=1}^w\mathbf{g}^k_n\right),$$
+
 where $n$ refers to the discrete time $t_n = n \Delta t$, $\mathbf{F}_n$ is the deterministic mapping matrix constructed using $\mathbf{A}$, $\mathbf{B}$ and $\tau_j$, $\mathbf{G}^k_n$ are the stochastic mapping matrices constructed using $\boldsymbol{\alpha}(t)$, $\boldsymbol{\beta}(t)$ and $\tau_j$, $\mathbf{f}_n$ and $\mathbf{g}^k_n$ are the deterministic and stochastic additive vectors, constructed using $\mathbf{c}$ and $\mathbf{\sigma}^k$, respectively.
 The vector $\mathbf{y}_n$ is the discretized state space vector:
 
 $$\mathbf y_{n} = \left(\mathbf{x}(t_n)^\top, \mathbf{x}(t_{n-1})^\top,\ldots,\mathbf{x}(t_{n-r})\right)^\top\!.$$
 
 The first moment dynamics is described by the expected value of the stochastic mapping, leading to a deterministic mapping:
+
 $$\mathbb{E}\left(\mathbf{y}_{n+1}\right) = \mathbf{F}_n\left(\mathbf{y}_n\right)+\mathbf{f}_n,$$
 while the second moment dynamics is described by the expected value of the outer product of the mapping:
 
@@ -29,7 +32,8 @@ $$\mathbf M_n = \mathbb{E}\left(\mathbf y_n \mathbf y_n^\top\right),
 
 $$\mathbf m_{n+1} =\mathbf H_n \\, \mathbf m_n + \mathbf h_{1,n}\mathbb{E}\left(\mathbf y_n\right)+\mathbf h_n,$$
 
-where coefficient matrices $\mathbf{H}_n$, $\mathbf{h}_{1,n}$ and additive vector $\mathbf{h}_n$ are constructed using the mapping matrices $\mathbf{F}_n$, $\mathbf{G}^k_n$ and vectors $\mathbf{f}_n$, $\mathbf{g}^k_n$, respectively. Note, that since the coefficient matrices of the original system are constant, the statistical properties of the coefficient matrices and additive vectors, hence the matrices $\mathbf{F}_n$, $\mathbf H_n$, $\mathbf{h}_{1,n}$ and vectors $\mathbf{f}_n$, $\mathbf{h}_n$ are also constant.
+where coefficient matrices $\mathbf{H}_n$, $\mathbf{h}_{1,n}$ and additive vector $\mathbf{h}_n$ are constructed using the mapping matrices $\mathbf{F}_n$, $\mathbf{G}^k_n$ and vectors $\mathbf{f}_n$, $\mathbf{g}^k_n$, respectively.
+Note, that since the coefficient matrices of the original system are constant, the statistical properties of the coefficient matrices and additive vectors, hence the matrices $\mathbf{F}_n$, $\mathbf H_n$, $\mathbf{h}_{1,n}$ and vectors $\mathbf{f}_n$, $\mathbf{h}_n$ are also constant.
 The integer $r$ is chosen in a way, that $r \Delta t \geq \max_{t \in \left[ 0, P \right], j = 1 \ldots g}\tau_j(t)$ (the discretized "history function" contains all possible delayed values) and $d$ is the dimension of the state space $\left(\mathbf{x}(t) \in \mathbb{R}^d\right)$..
 
 <!-- Each coefficient matrices of delay differential equations are periodic, with a principle period of $P$ -->
