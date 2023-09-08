@@ -28,12 +28,12 @@ end
 ################# Submatrix from the stochastic delayed terms #################
 ###############################################################################
 # TODO: increase the performance for constant matrices!
-function (method::SemiDiscretization{<:NumericSD})(τ::Real, B::stCoeffMX{d,<:DelayMX}, rst::AbstractResult{d}) where {d,T}
+function (method::SemiDiscretization{<:NumericSD})(τ::Real, B::stCoeffMX{d,<:DelayMX}, rst::AbstractResult{d}) where {d}
     (τerr, ranges) = method(τ, rst)
     MXs = [[rst.itoisometrymethod((t -> (exp(rst.A_avgs[i] * (rst.ts[i + 1] - t)) * B(t) * lagr_el0(methodorder(method), k, τerr, rst.ts[i + 1], t))), rst.ts[i], rst.ts[i + 1]) for k in 0:methodorder(method)] for i in 1:rst.n_steps]
     stSubMX.(Ref(B.nID),Ref(ranges), MXs)
 end
-function (method::SemiDiscretization{<:NumericSD})(τs::Vector{<:Real}, B::stCoeffMX{d,<:DelayMX}, rst::AbstractResult{d}) where {d,T}
+function (method::SemiDiscretization{<:NumericSD})(τs::Vector{<:Real}, B::stCoeffMX{d,<:DelayMX}, rst::AbstractResult{d}) where {d}
     (τerrs, rangess) = method(τs, rst)
     MXs = [[rst.itoisometrymethod((t -> (exp(rst.A_avgs[i] * (rst.ts[i + 1] - t)) * B(t) * lagr_el0(methodorder(method), k, τerrs[i], rst.ts[i + 1], t))), rst.ts[i], rst.ts[i + 1]) for k in 0:methodorder(method)] for i in 1:rst.n_steps]
     stSubMX.(Ref(B.nID),rangess, MXs)

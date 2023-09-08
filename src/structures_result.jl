@@ -26,7 +26,7 @@ struct Result{d,lddepT<:AbstractLDDEProblem{d},mT,submxT,stsubmxT,subvT,stsubvT,
     calculate_additive::Bool
 end
 
-function Result(LDDEP::LDDEProblem{d,AT,BT, cT}, method::DiscretizationMethod{fT}, DiscretizationLength::Real; n_steps::Int64=nStepOfLength(DiscretizationLength, method.Δt), calculate_additive::Bool=false,im::ItoIsometryMethod{K} = Trapezoidal(20,method)) where {d,AT,BT,cT,N,fT,K}
+function Result(LDDEP::LDDEProblem{d,AT,BT, cT}, method::DiscretizationMethod{fT}, DiscretizationLength::Real; n_steps::Int64=nStepOfLength(DiscretizationLength, method.Δt), calculate_additive::Bool=false,im::ItoIsometryMethod{K} = Trapezoidal(20,method)) where {d,AT,BT,cT,fT,K}
     # DiscretizationLength discretisated time interval length
     # n_steps: how many mapping matrix to calculate
     ts =  collect(fT,take(n_steps + 1, iterated(x -> method.Δt + x, zero(method.Δt))))

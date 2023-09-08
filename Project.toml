@@ -1,7 +1,7 @@
 authors = ["Henrik Sykora <henrik1991@gmail.com>"]
 name = "StochasticSemiDiscretizationMethod"
 uuid = "048039a2-5e1a-11e9-0eb6-5da22298fca4"
-version = "0.3.3"
+version = "0.3.4"
 
 [deps]
 Arpack = "7d9fca2a-8960-54d3-9f78-7d1dccf2cb97"
@@ -14,3 +14,12 @@ SemiDiscretizationMethod = "a6865705-0aff-55fc-a8e1-34d7b6815716"
 SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
 StaticArrays = "90137ffa-7385-5640-81b9-e52037218182"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[compat]
+julia = "1"
+Arpack ="0.5"
+Lazy ="0.15"
+QuadGK ="2"
+Reexport ="1"
+StaticArrays ="1"
+SemiDiscretizationMethod = "0.3"
