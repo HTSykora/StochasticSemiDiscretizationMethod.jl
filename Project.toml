@@ -1,7 +1,7 @@
 authors = ["Henrik Sykora <henrik1991@gmail.com>"]
 name = "StochasticSemiDiscretizationMethod"
 uuid = "048039a2-5e1a-11e9-0eb6-5da22298fca4"
-version = "0.3.4"
+version = "0.3.5"
 
 [deps]
 Arpack = "7d9fca2a-8960-54d3-9f78-7d1dccf2cb97"
