@@ -35,11 +35,14 @@ function Result(LDDEP::LDDEProblem{d,AT,BT, cT}, method::DiscretizationMethod{fT
 
 
     subMXs = [Vector{SubMX{eltype(A_avgs)}}(undef, n_steps) for i in 1:(length(LDDEP.Bs) + 1)] # []
-    stsubMXs = [Vector{stSubMX{SizedArray{Tuple{d,d},SArray{Tuple{K},eltype(eltype(A_avgs)),1,K},2,2}}}(undef,n_steps) for i in 1:(length(LDDEP.αs)+length(LDDEP.βs))]
+    # stsubMXs = [Vector{stSubMX{SizedArray{Tuple{d,d},SArray{Tuple{K},eltype(eltype(A_avgs)),1,K},2,2}}}(undef,n_steps) for i in 1:(length(LDDEP.αs)+length(LDDEP.βs))]
+    s_type = SArray{Tuple{K},eltype(eltype(A_avgs)),1,K}
+    stsubMXs = [Vector{stSubMX{SizedArray{Tuple{d,d},s_type,2,2,Matrix{s_type}}}}(undef,n_steps) for i in 1:(length(LDDEP.αs)+length(LDDEP.βs))]
 
     if calculate_additive
         subVs = Vector{SubV{SVector{d,eltype(eltype(A_avgs))}}}(undef, n_steps) # []
-        stsubVs = Vector{Vector{stSubV{SizedArray{Tuple{d},SArray{Tuple{K},Float64,1,K},1,1}}}}(undef, LDDEP.w);
+        s_type = SArray{Tuple{K},Float64,1,K}
+        stsubVs = Vector{Vector{stSubV{SizedArray{Tuple{d},s_type,1,1,Vector{s_type}}}}}(undef, LDDEP.w);
         # stSubV(LDDEP.dnoise.delayMX.τ.τ.ws, [Vector{SubV}(undef,n_steps) for i in LDDEP.dnoise.delayMX.τ.τ.ws]) # []
     else
         subVs = Vector{SubV{SVector{d,eltype(eltype(A_avgs))}}}(undef, 0)
